@@ -1,9 +1,17 @@
-## cubetime
+## chrisisler/cubetime
 
-Simple cube timer. Built using NextJS and MongoDB Atlas.
+Simple cube timer.
 
-#### node_modules fix
+- Click timer to start/stop
+- Click scramble to re-scramble
 
-The application depends on a package "scrambles" which throws an error due to a
-missing "worker_threads" dependency. To fix this, change line 13 of
-`node_modules/scrambles/dist/esm/scrambles.js` to `return self.Worker;`.
+### /api/solves
+
+- [x] GET /api/solves - Read all Solves
+- [x] POST /api/solves - Create a Solve
+- [x] DELETE /api/solves - Delete all Solves
+- [x] DELETE /api/solves/:id - Delete Solve by ID
+
+### client
+
+- [x] Simple mobile-first UI
