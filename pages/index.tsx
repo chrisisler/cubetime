@@ -58,15 +58,15 @@ const Home: NextPage<{
     if (solveTime === 0) {
       setStartTime(Date.now() - solveTime);
     } else {
+      // Reset timer
+      setStartTime(0);
+      setSolveTime(0);
+      // Generate new scramble
+      setScramble(getScramble());
       // Save the solve time to DB
       const solve = await SolvesApi.create(solveTime);
       // Update UI to reflect DB
       setSolves((s) => s.concat(solve));
-      // Generate new scramble
-      setScramble(getScramble());
-      // Reset timer
-      setStartTime(0);
-      setSolveTime(0);
     }
   }, [solveTime]);
 
@@ -90,7 +90,9 @@ const Home: NextPage<{
       </Head>
 
       <main>
-        <p onClick={() => setScramble(getScramble())}>{scramble}</p>
+        <p className="scramble-text" onClick={() => setScramble(getScramble())}>
+          {scramble}
+        </p>
         <div className="timer">
           <button onClick={handleClick}>
             <h1>{ms(solveTime)}</h1>
@@ -134,6 +136,7 @@ const Home: NextPage<{
           flex-direction: column;
           margin: 0 auto;
           text-align: center;
+          height: 100vh;
         }
 
         .solves-list {
@@ -177,13 +180,17 @@ const Home: NextPage<{
           outline: 0;
         }
 
+        .scramble-text {
+          font-size: larger;
+        }
+
         .timer {
           margin: 64px 0;
         }
 
         button {
           background-color: transparent;
-          font-size: 300%;
+          font-size: 350%;
           border: 0;
           outline: 0;
           color: #eee;
@@ -201,7 +208,8 @@ const Home: NextPage<{
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
 
-          background-color: #111;
+          height: 100vh;
+          width: 100vw;
           color: #eee;
         }
 
