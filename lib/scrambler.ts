@@ -26,6 +26,7 @@ enum Modifier {
 
 function randomElement<T>(array: T[]): T {
   if (!Array.isArray(array) || array.length < 1) {
+    // @ts-ignore
     return null;
   }
   return array[Math.floor(Math.random() * array.length)];
@@ -89,6 +90,7 @@ function generateScramble(size: number, numTurns: number): Turn[] {
   for (var i = 0; i < numTurns; i++) {
     do {
       newTurn = randomElement<Side>(sides);
+      // @ts-ignore
     } while (planeMapping[previousTurn] === planeMapping[newTurn]);
 
     var depth = Math.floor(Math.random() * maxDepth) + 1;
