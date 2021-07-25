@@ -210,6 +210,7 @@ const Home: NextPage<{
 
           height: 100vh;
           width: 100vw;
+          background-color: #111;
           color: #eee;
         }
 
