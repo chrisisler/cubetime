@@ -130,7 +130,7 @@ const Home: NextPage<{
 
       <style jsx>{`
         .container {
-          max-width: 512px;
+          max-width: 500px;
           padding: 64px 16px 0;
           display: flex;
           flex-direction: column;
@@ -160,7 +160,8 @@ const Home: NextPage<{
         }
 
         .solve-item button {
-          font-size: 16px;
+          font-size: 20px;
+          padding: 4px;
           border: 0;
           outline: 0;
           background-color: transparent;
@@ -172,7 +173,7 @@ const Home: NextPage<{
         }
 
         .clear-btn {
-          font-size: smaller;
+          font-size: 16px;
           margin-bottom: 8px;
           margin-left: auto;
           background-color: transparent;
@@ -181,7 +182,7 @@ const Home: NextPage<{
         }
 
         .scramble-text {
-          font-size: larger;
+          font-size: 24px;
         }
 
         .timer {
@@ -190,7 +191,7 @@ const Home: NextPage<{
 
         button {
           background-color: transparent;
-          font-size: 350%;
+          font-size: 370%;
           border: 0;
           outline: 0;
           color: #eee;
@@ -198,6 +199,11 @@ const Home: NextPage<{
 
         h1 {
           font-weight: 200;
+        }
+
+        p {
+          font-size: 20px;
+          line-height: 1.3em;
         }
       `}</style>
 
